@@ -1,0 +1,95 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+    <style>
+        #side-nav{
+            margin-left: 54px;
+            width: 20%;
+            padding-top: 20px;
+        }
+        #side-nav.affix{
+            top: 79px;
+        }
+    </style>
+    <div class="row" style="max-width: 100%;margin-left: 0px;">
+        <div id="side-nav" class="col-md-2 hidden-xs hidden-sm" data-spy="affix" data-offset-top="90" style="text-align:center; border:2px solid red;">
+            <img style="width:150px; height:auto; border-radius:75px;" src="https://lh6.googleusercontent.com/-Hja1qwhGXmg/TnzfF0RccmI/AAAAAAAAAFw/DQHiPhut4zg/w640-h638-no/P5290342.JPG">
+            <h4 style="color:#333">Downbeat Technologies</h4>
+            <h6 style="color:#444">John Rockford McNeely, Proprietor</h6>
+
+            <ul style="color:#777;list-style-type:none;padding-left:0;">
+                <li>(250) 634-3931</li>
+                <li>downbeattech@gmail.com</li>
+
+                <li>464 Bay St, Victoria BC, V8T 5H2</li>
+                <li>inside Pro Shop Sound & Lighting</li>
+            </ul>
+        </div>
+        <div class="col-md-9 pull-right main-content" style="max-width: 100%;padding: 0;">
+            {{#if home}}
+                <div class="well" id="intro" style="margin:0px 27px 27px 27px;">
+                    <p>Hello, visitor! John Rockford McNeely, electronics engineering technologist, musician, and writer at your service. Downbeat Technologies is my electronics and instrument repair shop, private drum teaching studio, and professional writing service.</p>
+
+                    <p>(I'm envisioning the introductory section above as a stand-alone paragraph, centre aligned. Then this part below is a 2 column type of situation, with the text on the left and complimentary photos on the right.</p>
+
+                    <h5>WHAT I DO</h5>
+
+                    <h6>TECHNOLOGY -</h6>
+                    <p style="display:inline;">Audio electronics and power supplies are my specialties, but I can fix all kinds of electronic devices, including projects that require micro board level soldering. I also perform non-structural repairs on stringed instruments, both acoustic and electronic. Try my guitar setups, you'll never go back. [photo of something cool]</p>
+
+                    <h6>MUSIC -</h6>
+                    <p style="display:inline;">My passion in life is playing the drums. I currently play drums in Aetherion (link to FB page) and Tight Hair (link), give us a listen won't you? I offer private lessons at my shop and I'm available for gigs and recording sessions. [photo of something drummy]</p>
+
+                    <h6>WORDS -</h6>
+                    <p style="display:inline;">Perhaps you've enjoyed my website's informative yet playful tone? I can help you broaden, simplify, and stylize your written communications. I write and edit manuals, resumes, reports, and web content. I also offer business writing workshops and tutorials for individuals or groups. [photo of something writey]</p>
+
+                    <p>I'd like to hear about your projects and ideas. Call (250) 634-3931, send me an email at downbeattech@gmail.com, or drop by 464 Bay St. The storefront is open 9:30 - 6:00 Monday to Friday and 10:00 - 5:00 on Saturday for pick-up and drop-off. I'm in the shop Tuesday, Thursday, Friday, and by appointment. Please call ahead if you're planning to come down, as I'm sometimes out picking up parts or delivering finished projects!</p>
+                </div>
+            {{/if}}
+            {{#foreach posts}}
+                <section class="well" id="post{{id}}" style="margin-left: 27px;margin-right: 27px;">
+                    <h1><a href="{{url}}">{{title}}</a></h1>
+                    <hr>
+                    <p>{{content}}</p>
+                    <hr/>
+                    <div class="pull-right">
+                        <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </div>
+                    {{#if author}}
+                        <div class="author">
+                            {{#if author.website}}<a  href="{{author.website}}" >{{/if}}
+                            <i>{{author.name}}</i>
+                            {{#if author.website}}</a>{{/if}} - <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time> {{#if tags}} | Tags: {{tags}}{{/if}}</span>
+                        </div>
+                    {{/if}}
+                    
+                </section>
+            {{/foreach}}
+            <div>
+                <ul class="nav nav-pills nav-stacked" >
+                {{#foreach posts}}
+                    <li>
+                        <a href="#post{{id}}">{{title}}</a>
+                    </li>
+                {{/foreach}}
+                </ul>
+                {{pagination}}
+            </div>
+            {{!! After all the posts, we have the previous/next pagination links }}
+            <div class="visible-sm" style="margin-left:27px;">
+                {{pagination}}
+            </div>
+        </div>
+    </div>
