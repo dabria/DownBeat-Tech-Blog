@@ -88,7 +88,7 @@
 <body class="{{body_class}}" data-spy="scroll" data-target="#side-nav" data-offset="150" style="max-width: 100%;">
     <div id="mainNav" class="navbar navbar-inverse affix-top" role="navigation" data-spy="affix" style="background:#e6e6e6;border:none;border-radius:0;color:black;">
         <div class="container">
-            <div class="navbar-header" style="margin-left:54px;">
+            <div class="navbar-header">
                 <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
             </div>
             <ul class="nav navbar-nav hidden-xs">
@@ -102,8 +102,8 @@
         {{{body}}}
     </div>
     <div class="container bodyfooter" style="max-width: 100%; padding-bottom: 27px;">
-        <div class="row" style="text-align:center;">
-        <hr></hr>
+        <div class="row" style="text-align:center; font-size:12px;">
+        <hr  style="margin-bottom: 54px"></hr>
         <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
              <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; <script language="JavaScript" type="text/javascript">now = new Date;theYear=now.getYear();if (theYear < 1900);theYear=theYear+1900;document.write(theYear)</script> &bull; All rights reserved.</section>

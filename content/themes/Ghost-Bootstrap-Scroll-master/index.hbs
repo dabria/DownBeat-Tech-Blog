@@ -4,16 +4,27 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
     <style>
         #side-nav{
-            padding-top: 20px;
             margin-left: 54px;
         }
         #side-nav.affix{
-            top: 79px;
+            position: fixed;
+            top: 170px;
         }
     </style>
     <div class="container">
-        <div class="row" style="max-width: 100%;margin-left: 0px;">
-            <div id="side-nav" class="col-md-3 well hidden-xs hidden-sm" data-spy="affix" data-offset-top="90" style="text-align:center;">
+        <div>
+            {{#is "home"}}
+                <div class="" id="intro" style="margin:0px 40px 27px 54px;">
+                    <div style="text-align:center;">
+                        <img style="width:500px; height:auto;" src="http://downbeattech.ca/img/fulllogo.png">
+                        <p style="padding:20px 0;font-size:16px">Hello, visitor! John Rockford McNeely, electronics engineering technologist, musician, and writer at your service. Downbeat Technologies is my electronics and instrument repair shop, private drum teaching studio, and professional writing service.</p>
+                    </div>
+                </div>
+                <hr></hr>
+            {{/is}}
+        </div>
+        <div class="row" style="max-width: 100%;margin-left: 0px; margin-top: 54px">
+            <div id="side-nav" class="col-md-3 hidden-xs hidden-sm" data-spy="affix" data-offset-top="200" style="text-align:center;">
                 <img style="width:150px; height:auto; border-radius:75px;" src="https://lh6.googleusercontent.com/-Hja1qwhGXmg/TnzfF0RccmI/AAAAAAAAAFw/DQHiPhut4zg/w640-h638-no/P5290342.JPG">
                 <h4 style="color:#333">Downbeat Technologies</h4>
                 <h6 style="color:#444">John Rockford McNeely, Proprietor</h6>
@@ -23,18 +34,10 @@
                     <li>downbeattech@gmail.com</li>
 
                     <li>464 Bay St, Victoria BC, V8T 5H2</li>
-                    <li>inside Pro Shop Sound & Lighting</li>
+                    <li>inside Pro Shop Sound &amp; Lighting</li>
                 </ul>
             </div>
             <div class="col-md-8 pull-right main-content" style="max-width: 100%;padding: 0;">
-                {{#is "home"}}
-                    <div class="" id="intro" style="margin:0px 27px 27px 27px;">
-                        <div style="text-align:center;">
-                            <img style="width:500px; height:auto;" src="http://downbeattech.ca/img/fulllogo.png">
-                            <p style="padding:20px 0;font-size:17px">Hello, visitor! John Rockford McNeely, electronics engineering technologist, musician, and writer at your service. Downbeat Technologies is my electronics and instrument repair shop, private drum teaching studio, and professional writing service.</p>
-                        </div>
-                    </div>
-                {{/is}}
                 <div>
                     {{#foreach posts}}
                         <section class="well" id="post{{id}}" style="margin-left: 27px;margin-right: 27px;">
