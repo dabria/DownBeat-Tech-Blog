@@ -5882,7 +5882,7 @@ a.list-group-item.active:focus .list-group-item-text {
   background-image:none;
   min-height: 20px;
   padding: 19px;
-  margin: 0 54px 20px 64px;
+  margin: 0 0 20px 64px;
   background-color: #F8F8F8;
 }
 
