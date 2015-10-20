@@ -86,13 +86,13 @@
     
 </head>
 <body class="{{body_class}}" data-spy="scroll" data-target="#side-nav" data-offset="150" style="max-width: 100%;">
-    <div id="mainNav" class="navbar navbar-inverse affix-top" role="navigation" data-spy="affix" style="background:#e6e6e6;border:none;border-radius:0;color:black;">
-        <div class="container">
+    <div id="mainNav" class="navbar navbar-inverse affix-top" role="navigation" data-spy="affix" style="background:#3f9cf2;border:none;border-radius:0;color:black;border-bottom: 1px solid #1190ba;">
+        <div class="container" style="width:80%">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}}</a>
+                <a class="navbar-brand" style="color:white;font-size: 27px; margin-left: -70px;border-right:1px solid #1190ba;padding:5px 10px 5px 5px" href="{{@blog.url}}"><img style="width:50px; height:auto;margin:0;padding-right: 10px;" src="../content/images/logo.png">{{@blog.title}}</a>
             </div>
             <ul class="nav navbar-nav hidden-xs">
-                <li><a href="/about">About</a></li>
+                <li style="font-size:16px;margin-left:10px;"><a style="color:#e6e6e6;" href="/about">About</a></li>
             </ul>
         </div>
     </div>
@@ -101,9 +101,9 @@
     <div style="padding-top: 40px">
         {{{body}}}
     </div>
-    <div class="container bodyfooter" style="max-width: 100%; padding-bottom: 27px;">
+
+    <div class="container bodyfooter" style="max-width: 100%; padding-bottom: 27px; margin-top: 100px">
         <div class="row" style="text-align:center; font-size:12px;">
-        <hr  style="margin-bottom: 54px"></hr>
         <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
         <div class="inner">
              <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; <script language="JavaScript" type="text/javascript">now = new Date;theYear=now.getYear();if (theYear < 1900);theYear=theYear+1900;document.write(theYear)</script> &bull; All rights reserved.</section>

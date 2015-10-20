@@ -4,79 +4,81 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
     <style>
         #side-nav{
-            margin-left: 54px;
+            margin-left: 80px;
         }
         #side-nav.affix{
             position: fixed;
-            top: 210px;
+            top: 225px;
         }
     </style>
     <div>
         {{#is "home"}}
             <div style="background-image:url('../content/images/workshop2.png');background-size:110%;background-repeat:no-repeat;background-position:center left;width:100%;margin:0;padding:30px 0;">
-                <div class="" id="intro" style="margin:0px 40px 27px 54px;">
+                <div id="intro" style="margin:120px 40px 120px 54px;">
                     <div style="text-align:center;">
-                        <img style="width:150px; height:auto;padding:30px 0" src="../content/images/logo.png">
-                        <div class="container" style="width:700px;text-shadow: 1px 1px #000;">
+                        <div class="container" style="width:700px;text-shadow: 2px 2px 2px #000;">
                             <p style="display:inline;padding:30px 0;font-size:30px;color:white;margin:0 auto;">Hello, visitor!&nbsp;</p>
-                            <p style="display:inline;color:#3f9cf2;font-size:20px">John Rockford McNeely</p>
-                            <p style="color:white;font-size:20px;display:inline;">, electronics engineering technologist, musician, and writer at your service. Downbeat Technologies is my electronics and instrument repair shop, private drum teaching studio, and professional writing service.</p>
+                            <p style="display:inline;color:white;border:3px solid #3f9cf2; padding:5px;font-size:20px">John Rockford McNeely</p>
+                            <p style="color:white;font-size:20px;display:inline;">, electronics engineering technologist, musician, and writer at your service.</p>
+                            <p style="color:white;font-size:20px;">Downbeat Technologies is my electronics and instrument repair shop, private drum teaching studio, and professional writing service.</p>
                         </div>
                     </div>
                 </div>
             </div>
         {{/is}}
     </div>
-    <div class="row" style="max-width: 100%; margin-top: 54px">
-        <div id="side-nav" class="col-md-3 hidden-xs hidden-sm" style="text-align:center;padding-left:5%" data-spy="affix" {{#is "home"}}data-offset-top="300"{{/is}}>
-            <img style="width:150px; height:auto; border-radius:75px;" src="https://lh6.googleusercontent.com/-Hja1qwhGXmg/TnzfF0RccmI/AAAAAAAAAFw/DQHiPhut4zg/w640-h638-no/P5290342.JPG">
-            <h4 style="color:#333">Downbeat Technologies</h4>
-            <h6 style="color:#444">John Rockford McNeely, Proprietor</h6>
+    <div class="row" style="width: 100%; margin-top: 54px">
+        <div style="max-width: 1400px; margin: 0 auto">
+            <div id="side-nav" class="col-md-3 hidden-xs hidden-sm" style="text-align:center;" data-spy="affix" {{#is "home"}}data-offset-top="300"{{/is}}>
+                <img style="width:150px; height:auto; border-radius:75px;" src="https://lh6.googleusercontent.com/-Hja1qwhGXmg/TnzfF0RccmI/AAAAAAAAAFw/DQHiPhut4zg/w640-h638-no/P5290342.JPG">
+                <h4 style="color:#333">Downbeat Technologies</h4>
+                <h6 style="color:#444">John Rockford McNeely, Proprietor</h6>
 
-            <ul style="color:#777;list-style-type:none;padding-left:0;">
-                <li>(250) 634-3931</li>
-                <li>downbeattech@gmail.com</li>
+                <ul style="color:#777;list-style-type:none;padding-left:0;">
+                    <li>(250) 634-3931</li>
+                    <li>downbeattech@gmail.com</li>
 
-                <li>464 Bay St, Victoria BC, V8T 5H2</li>
-                <li>inside Pro Shop Sound &amp; Lighting</li>
-            </ul>
-        </div>
-        <div class="col-md-8 pull-right main-content" style="max-width: 100%;padding: 0;">
-            <div>
-                {{#foreach posts}}
-                    <section class="well" id="post{{id}}" style="margin-left: 27px;margin-right: 27px;">
-                        <h1><a href="{{url}}">{{title}}</a></h1>
-                        <hr>
-                        <p>{{content}}</p>
-                        <hr/>
-                        <div class="pull-right">
-                            <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
-                                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                                <span class="hidden">Twitter</span>
-                            </a>
-                            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                                <span class="hidden">Facebook</span>
-                            </a>
-                            <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                                <span class="hidden">Google+</span>
-                            </a>
-                        </div>
-                        {{#if author}}
-                            <div class="author">
-                                {{#if author.website}}<a  href="{{author.website}}" >{{/if}}
-                                <i>{{author.name}}</i>
-                                {{#if author.website}}</a>{{/if}} - <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time> {{#if tags}} | Tags: {{tags}}{{/if}}</span>
-                            </div>
-                        {{/if}}
-                        
-                    </section>
-                {{/foreach}}
+                    <li>464 Bay St, Victoria BC, V8T 5H2</li>
+                    <li>inside Pro Shop Sound &amp; Lighting</li>
+                </ul>
             </div>
-            <div style="text-align:right;margin-right:30px">
-                {{!! After all the posts, we have the previous/next pagination links }}
-                {{pagination}}
+            <div class="col-md-8 pull-right main-content" style="max-width: 100%;padding: 0;">
+                <div>
+                    {{#foreach posts}}
+                        <section class="well" id="post{{id}}" style="margin-left: 27px;margin-right: 27px;">
+                            <h1><a href="{{url}}">{{title}}</a></h1>
+                            <hr>
+                            <p>{{content}}</p>
+                            <hr/>
+                            <div class="pull-right">
+                                <a class="icon-twitter" href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                                    <span class="hidden">Twitter</span>
+                                </a>
+                                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                                    <span class="hidden">Facebook</span>
+                                </a>
+                                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                                    <span class="hidden">Google+</span>
+                                </a>
+                            </div>
+                            {{#if author}}
+                                <div class="author">
+                                    {{#if author.website}}<a  href="{{author.website}}" >{{/if}}
+                                    <i>{{author.name}}</i>
+                                    {{#if author.website}}</a>{{/if}} - <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time> {{#if tags}} | Tags: {{tags}}{{/if}}</span>
+                                </div>
+                            {{/if}}
+                            
+                        </section>
+                    {{/foreach}}
+                </div>
+                <div style="text-align:right;margin-right:30px">
+                    {{!! After all the posts, we have the previous/next pagination links }}
+                    {{pagination}}
+                </div>
             </div>
         </div>
     </div>
