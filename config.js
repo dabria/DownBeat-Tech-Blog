@@ -3,13 +3,13 @@ config = {
   production: {
     url: 'http://downbeatblog.com',
     database: {
-      client: 'postgres',
+      client: 'pg',
       connection: {
-            host: 'c2-107-21-219-142.compute-1.amazonaws.com',
-            user: 'johndown',
-            password: '43Rw2GYzLyqkrO9QYs2fPFWgd3',
-            database: 'd4eg5fdssfjeba',
-            port: '5432'
+            host: url.parse(process.env.DATABASE_URL).host,
+            user: url.parse(process.env.DATABASE_URL).auth.split(':')[0],
+            password: url.parse(process.env.DATABASE_URL).auth.split(':')[1],
+            database: url.parse(process.env.DATABASE_URL).path.replace('/', ''),
+            port: url.parse(process.env.DATABASE_URL).port
       },
     },
     server: {
