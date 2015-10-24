@@ -1,8 +1,7 @@
-// ### Production
 {
   production: {
-    url: 'http://my-blog.com',
-    database {
+    url: 'http://downbeatblog.com',
+    database: {
       client: 'postgres',
       connection: process.env.DATABASE_URL,
       debug: false
