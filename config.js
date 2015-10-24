@@ -4,12 +4,16 @@ config = {
     
     database: {
       client: 'postgres',
-      connection: process.env.DATABASE_URL,
-      debug: false
+      connection: {
+        host: 'ec2-107-21-219-142.compute-1.amazonaws.com',
+        user: 'username',
+        password: 'rridscvkqkiwig',
+        database: 'd4eg5fdssfjeba',
+        port: '5432'
     },
     server: {
       host: '0.0.0.0',
-      port: process.env.PORT
+      port: process.env
     }
   }
 }
