@@ -1,6 +1,7 @@
-{
+config = {
   production: {
     url: 'http://downbeatblog.com',
+    
     database: {
       client: 'postgres',
       connection: process.env.DATABASE_URL,
