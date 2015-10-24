@@ -2,7 +2,7 @@
 {
   production: {
     url: 'http://my-blog.com',
-    database: {
+    database {
       client: 'postgres',
       connection: process.env.DATABASE_URL,
       debug: false
