@@ -1,7 +1,9 @@
+var url = require('url');
+
 // ### Production
 config = {
   production: {
-    url: 'http://downbeatblog.com',
+    url: 'http://downbeatblog.herokuapp.com/',
     database: {
       client: 'pg',
       connection: {
