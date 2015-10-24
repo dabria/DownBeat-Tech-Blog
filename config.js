@@ -10,6 +10,7 @@ config = {
         password: 'rridscvkqkiwig',
         database: 'd4eg5fdssfjeba',
         port: '5432'
+      }
     },
     server: {
       host: '0.0.0.0',
