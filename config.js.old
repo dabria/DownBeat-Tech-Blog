@@ -1,0 +1,42 @@
+var url = require('url');
+
+config = {
+  development: {
+    url: 'http://downbeatblog.herokuapp.com/',
+    mail: {},
+    database: {
+      client: 'mysql',
+      connection: {
+            host: url.parse(process.env.DATABASE_URL).host,
+            user: url.parse(process.env.DATABASE_URL).auth.split(':')[0],
+            password: url.parse(process.env.DATABASE_URL).auth.split(':')[1],
+            database: url.parse(process.env.DATABASE_URL).path.replace('/', ''),
+            port: url.parse(process.env.DATABASE_URL).port
+      },
+      debug: true
+    },
+    server: {
+      host: '0.0.0.0',
+      port: process.env.PORT
+    }
+  },
+  production: {
+    url: 'http://downbeatblog.herokuapp.com/',
+    mail: {},
+    database: {
+      client: 'mysql',
+      connection: {
+            host: url.parse(process.env.DATABASE_URL).host,
+            user: url.parse(process.env.DATABASE_URL).auth.split(':')[0],
+            password: url.parse(process.env.DATABASE_URL).auth.split(':')[1],
+            database: url.parse(process.env.DATABASE_URL).path.replace('/', ''),
+            port: url.parse(process.env.DATABASE_URL).port
+      },
+      debug: true
+    },
+    server: {
+      host: '0.0.0.0',
+      port: process.env.PORT
+    }
+  }
+}

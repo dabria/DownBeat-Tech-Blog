@@ -69,7 +69,6 @@
     "xml": "1.0.0"
   },
   "optionalDependencies": {
-    "sqlite3": "3.0.8",
     "pg": "4.1.1"
   },
   "devDependencies": {
