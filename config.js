@@ -16,7 +16,7 @@ config = {
         database: {
             client: 'pg',
             connection: {
-                host: url.parse(process.env.DATABASE_URL).host,
+                host: url.parse(process.env.DATABASE_URL).host.split(':')[0],
                 user: url.parse(process.env.DATABASE_URL).auth.split(':')[0],
                 password: url.parse(process.env.DATABASE_URL).auth.split(':')[1],
                 database: url.parse(process.env.DATABASE_URL).path.replace('/', ''),
